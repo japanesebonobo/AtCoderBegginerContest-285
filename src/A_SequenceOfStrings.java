@@ -4,15 +4,19 @@ import java.util.*;
 public class A_SequenceOfStrings {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int N = scanner.nextInt();
-        String S[] = new String[N];
-        for (int i = 0; i < N; i++) {
-            S[i] = scanner.next();
-        }
+        int a = scanner.nextInt();
+        int b = scanner.nextInt();
         scanner.close();
-
-        for (int i = 0; i < S.length; i++) {
-            System.out.println(S[N-i-1]);
+        String ans = "No";
+        
+        if (b/a == 2) {
+            ans = "Yes";
         }
+
+        if (a == 1 && b == 3) {
+            ans = "Yes";
+        }
+        
+        System.out.println((ans));
     }
 }

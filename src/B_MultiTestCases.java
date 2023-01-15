@@ -4,20 +4,30 @@ import java.util.*;
 public class B_MultiTestCases {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int T = scanner.nextInt();
-        int ans[] = new int[T];
-        for (int i = 0; i < T; i++) { 
-            int N = scanner.nextInt();
-            int A[] = new int[N];
-            for (int j = 0; j < A.length; j++) {
-                A[j] = scanner.nextInt();
-                if (A[j]%2 != 0) {
-                    ans[i]++;
+        int N = scanner.nextInt();
+        String S = scanner.next();
+        scanner.close();
+
+        char s[] = S.toCharArray();
+        
+        int l = 1;
+        for (int i = 1; i < N; i++) { 
+            int counter = 0;
+            for (int j = 0; j < s.length; j++) {
+                if (j+l>N-1) {
+                    break;
                 }
+                if(s[j] == s[j+l]) {
+                    break;
+                }
+                counter++;
             }
-        }
-        for (int i = 0; i < ans.length; i++) {
-            System.out.println(ans[i]);
+            if (counter == 0) {
+                System.out.println(0);
+            } else {
+                System.out.println(counter);
+            }
+            l++;
         }
     }
 }
